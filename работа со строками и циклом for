@@ -1,0 +1,190 @@
+# name1 = "pavel"
+# name2 = "zaharov"
+# full_name = name1 + " " + name2
+# print(name1)
+# print("Hello " + full_name.title() + "!")
+
+# a = input(":")
+# print(a.rstrip())
+# f = open('new.txt','w')
+# f.write(a)
+# print(f)
+# f.close()
+
+# age = str(23)
+# message = "Happy " + age + "rd Birthday!"
+# print(message)
+
+# b = ['pavel', 'olga', 'ann']
+# # c = b[0]
+# # b[1] = 'igor'
+# # b.append('oleg')
+# # b.insert(0, 'vasya')
+# # del b[1]
+# print(b)
+# # print(b[1].title() + ' ' 'Hellow')
+# # print(b[2].title())
+# new_variable = b.pop(0)
+# print(b)
+# print(new_variable)
+
+# guest_list = ['pavel', 'ann', 'yana']
+# del guest_list[0]
+# guest_list.insert(0, 'vasya')
+# messeges = guest_list[0].title(),  guest_list[1].title(), guest_list[2].title() + ' ' + 'Hellow'
+# print(messeges)
+
+# list_1 = list(range(1,100))
+# for value in list_1:
+#     print(value)
+# print(min(list_1))
+# print(max(list_1))
+# print(sum(list_1))
+
+# list_1 = range(1, 10, 2)
+# for a in list_1:
+#     print(a)
+
+list_1 = range(3, 31, 3)
+for a in list_1:
+    print(a)
+
+list_1 = [value**3 for value in range(1, 11)]
+print(list_1)
+
+list_1 = []
+for value in range(1, 11):
+    list_2 = value**3
+    list_1.append(list_2)
+print(list_1)
+
+# a = ['suzuki', 'bmw', 'lada', 'mazda', 'kawasaki']
+# print(a)
+# print('This is first three in the ithems in the list are: ')
+# print(a[2:])
+
+# a = ['suzuki', 'bmw', 'lada', 'mazda', 'kawasaki']
+# b = a[:]
+# print(b)
+# a.insert(0, 'mersedes')
+# print(a)
+# print(b)
+# for list_1 in a:
+#     print('Основной список: ')
+#     print(list_1,)
+# for list_2 in b:
+#     print('\nВторичный список: ')
+#     print(list_2)
+
+# food = ('cup', 'omelette', 'potatos')
+# print('\noriginal list :')
+# for foods in food:
+#     print(foods)
+# food = ('suzuki', 'kawasaki')
+# print('\nmodified :')
+# for foods in food:
+#     print(foods)
+
+
+# cars = ['suzuki', 'audi', 'ford', 'bmw']
+# print(cars)
+# for car in cars:
+#     if car == 'bmw':
+#         print(car.upper())
+#     else:
+#         print(car.title())
+
+# requested_toppings = ['mushrooms', 'onions', 'pineapple']
+# a = 'mushrooms'
+# if a in requested_toppings:
+#     print(a)
+
+# banned_users = ['andrew', 'carolina', 'david']
+# user = 'marie'
+# if user not in banned_users:
+#     print(user.title() + ", you can post a response if you wish.")
+
+# a = input('введите название авто:')
+# if a == 'kawasaki' 'Kawasaki':
+#     print('kawasaki is true')
+# elif a == 'suzuki':
+#     print('suzuki is true')
+# else:
+#     print('Такого значения не существует в системе')
+
+c = int(input(':'))
+a = 2
+b = 4
+d = ['suzuki', 'yamaha']
+if c < a:
+    print(c)
+elif (c > a) and (c < b):
+    print('c находится между a и b')
+else:
+    print('с больше чем все имеющиеся числа')
+if 'kawasaki' not in d:
+    print('kawa сейчас не популярна')
+    
+    ########INPUT and WHile
+    
+    
+# number = int(input())
+# if number % 10 == 0:
+#     print('Это число кратно 10')
+# else:
+#     print('Это число не кратно 10')
+
+# addition_to_pizza = 'Это дополнение вклчено в заказ!'
+# active = '\nВведите нужный ингридиент: '
+# active += '\nДля выхода введите "quit"'
+# messages = ''
+# while True:
+#     messages = input(active)
+#     if messages == 'quit':
+#         break
+#     else:
+#         print(addition_to_pizza)
+
+# messages = int(input('Введите ваш возраст : '))
+# a = 0
+# while messages <= 100:
+#     print(messages)
+#     if messages < 3:
+#         print('вход бесплатный')
+#         break
+#     elif messages > 12:
+#         print('стоимость билета 15$')
+#         break
+#     else:
+#         print('стоимость билета 12$')
+#         break
+
+
+# a = ['бутер с сыром', 'бутер с колбасой', 'бутер с паштетом']
+# b = []
+
+# while a:
+#     c = a.pop()
+#     print('Новый бутер ' + c)
+#     b.append(c)
+# print(b)
+
+# a = ['бутер с сыром', 'бутер с колбасой', 'бутер с паштетом', 'бутер с сыром', 'бутер с сыром']
+# print('Бутербродов с сыром больше нет')
+
+# while 'бутер с сыром' in a:
+#     a.remove('бутер с сыром')
+# print(a)
+
+active = True
+survey = {}
+while active:
+    a = input('Какая страна вам нравится?')
+    survey['country'] = a
+    reapit = input('Хотите продолжить опрос?')
+    if reapit == 'no':
+        active = False
+    else:
+        d = input('Какой город вам понравился там?')
+        survey['city'] = d
+    print(survey)
