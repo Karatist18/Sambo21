@@ -1,0 +1,84 @@
+import math
+
+x1 = float(input('введите координаты x1 :'))
+y1 = float(input('введите координаты y1 :'))
+x2 = float(input('введите координаты x2 :'))
+y2 = float(input('введите координаты y2 :'))
+
+dot1 = (x2-x1)**2
+dot2 = (y2-y1)**2
+print(round(math.sqrt(dot1+dot2),4))
+
+
+#############ДЗ Вврдим цифру и на экран выводятся ао возрастанию * Ёлочкой
+
+# x = int(input('Введите цифру :'))
+# y = range(1,100000)
+# n = '*'
+# for v in range(1, 1000):
+#     if v <= x:
+#         print(n)
+#         n = n + '*'
+#     else:
+#         break
+
+###################ДЗ по функциям
+def whos_first(p1, p2):
+    # ваше решение
+    diff = p1.find('B') - p2.find('B')
+    
+    if diff > 0:
+        return 'p2'
+    elif diff < 0:
+        return 'p1'
+    else:
+        return 'tie'
+        
+        
+ class Beverage:
+    def __init__(self, ingr):
+        self.ingridients = ingr
+        self.prices = {"Strawberries" : 1.5, "Banana" : 0.5, "Mango" : 2.5,
+		"Blueberries" : 1, "Raspberries" : 1, "Apple" : 1.75,
+		"Pineapple" : 3.5}
+
+    def get_cost(self):
+        self.a = [v for k,v in self.prices.items() if k in self.ingridients]
+        return sum(self.a)
+    def get_price(self):
+        return sum(self.a) * 2.5
+    def get_name(self):
+        c = 0
+        for i in self.ingridients:
+            c += 1
+        if c > 1:
+            return r'{self.ingridients} + Fusion'
+        else:
+            return self.ingridients
+# prices = {"Strawberries" : 1.5, "Banana" : 0.5, "Mango" : 2.5,
+# 		"Blueberries" : 1, "Raspberries" : 1, "Apple" : 1.75,
+# 		"Pineapple" : 3.5}
+# a = [v for k,v in prices.items()]
+# print(a)
+# print(sum(a))
+a = Beverage(['Banana','Apple', 'Mango'])
+print(a.get_cost())
+print(a.get_price())
+print(a.get_name())
+
+
+class Beverage():
+    def __init__(self, ingr):
+        self.ingredients = ingr
+        self.prices = {"Strawberries" : 1.5, "Banana" : 0.5, "Mango" : 2.5,
+		"Blueberries" : 1, "Raspberries" : 1, "Apple" : 1.75,
+		"Pineapple" : 3.5}
+        self.cost = sum([v for k,v in self.prices.items() if k in self.ingredients])
+        self.price = self.cost * 2.5
+    def get_cost(self):
+        return f'$ {self.cost:.2f}'
+    def get_price(self):
+        return f'$ {self.price:.2f}'
+    def get_name(self):
+        lst = sorted([i.replace('ies', 'y') for i in self.ingredients])
+        return f'{" ".join(lst)} {"Fusion" if len(lst) >1 else "Smoothie"}'
