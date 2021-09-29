@@ -1,0 +1,274 @@
+# def make_shirt(first_name, second_name='zakharov'):
+#     a = {}
+#     if first_name != '':
+#         a['first_name'] = first_name.title()
+#         a['second_name'] = second_name.title()
+#         print(a)
+
+# make_shirt('pavel', 'zaharov')
+# make_shirt(second_name='pavel', first_name='zaharov')
+
+# make_shirt(first_name='zaharov')
+
+
+# def make_shirt(first_name, second_name):
+# """Возвращает аккуратно отформатированное имя"""
+#     full_name = first_name + ' ' + second_name
+#     return full_name.title()
+# a = make_shirt('pavel', 'zaharov')
+# b = []
+# b.insert(0, a)
+# print(b)
+
+# def make_shirt(first_name, second_name, middle_name = ''):
+# #Если мы хотим сделать аргумент не обязательным нужно присвоить ему пустое значение по умолчанию и добавить в конец списка
+#     if middle_name:
+#         full_name = first_name + ' ' + second_name + ' ' + middle_name
+#     else:
+#         full_name = first_name + ' ' + second_name
+#     return full_name
+
+# a = make_shirt('pavel', 'zaharov', 'Олегович')
+# print(a)
+# a = make_shirt('pavel', 'zaharov')
+# print(a)
+
+#Декораторы_______________________________Нужны для красивого оформления начала и конца выполненного результата при вызове какой-нибудь функции
+
+# def log_decorator(func):
+#     def wrap():
+#         print(f'calling func {func}')
+#         func()
+#         print(f'func {func} its work')
+#     return wrap
+# def hellow():
+#     print('Hellow world')
+
+# # wrapped = log_decorator(hellow)
+# # wrapped()
+# # Получим результат:
+# # calling func <function hellow at 0x000001B1315DE9D8>
+# # Hellow world
+# # func <function hellow at 0x000001B1315DE9D8> its work
+# # но можем воспользоваться специальным синтаксисом и получим тот же самый результат:
+# @log_decorator
+# def hello():
+#     print('Hellow world')
+# hello()
+##Пример декоратора, где мы замеряем время за которое выполняется функция
+
+# from timeit import default_timer as timer
+# import math
+# import time
+
+# def mesure_time(func):
+#     def inner(*args):
+#         start = timer()
+#         func(*args)
+#         end = timer()
+#         print(f'function {func} took {end-start} for execution')
+#     return inner
+# @mesure_time
+# def factorial(num):
+#     time.sleep(3)
+#     print(math.factorial(num)) #Математическая функция факториал, умножает все натуральные числа от 1 до 50 в данном лучае
+# factorial(50)
+# def make_shirt(first_name, second_name, middle_name = ''):
+# #Возвращаем словарь
+#     personal = {'first': first_name, 'second': second_name}
+#     if middle_name:
+#         personal['middle'] = middle_name
+#     return personal
+# a = make_shirt('pavel', 'zaharov', 'Олегович')
+# print(a)
+# a = make_shirt('pavel', 'zaharov')
+# print(a)
+
+# def make_shirt(first_name, second_name):
+#     full_name = first_name.title() + ' ' + second_name.title()
+#     return full_name
+# while True:
+#     a = input("введите имя: ")
+#     print("\nДля завершения введите q")
+#     if a == 'q':
+#         break
+#     b = input("Введите фамилию: ")
+#     if b == 'q':
+#         break
+
+#     c = make_shirt(a, b)
+#     print(c)
+
+
+# def music_album(name, album, number_of_roads = ''):
+#     a = {'name': name.title(), 'album': album}
+#     if number_of_roads:
+#         a['number_of_roads'] = number_of_roads
+#     return a
+
+# disk1 = music_album('jimmi', 'hendrix')
+# print(disk1)
+
+# disk2 = music_album('jimmi', 'hendrix', '12')
+# print(disk2)
+
+
+
+# def music_album(name, album, number_of_roads = ''):
+#     a = {'name': b, 'album': c, 'number_of_roads': d}
+#     return a
+# while True:
+#     b = input('Введите название исполнителя: ')
+#     print(b)
+#     print('\nДля выхода введите q')
+#     if b == 'q':
+#         break
+#     c = input('Введите название альбома: ')
+#     print(c)
+#     print('\nДля выхода введите q')
+#     if c == 'q':
+#         break
+#     d = input('Введите количество дорожек: ')
+#     print(d)
+#     print('\nДля выхода введите q')
+#     if d == 'q' or d != '':
+#         break
+# disk1 = music_album(b, c, d)
+# print(disk1)
+
+
+
+##Передача списка в функции:
+
+# def show_magicians(magicians):
+#     for magic in magicians:
+#         print(magic)
+
+# list = ['pavel', 'alex']
+# show_magicians(list)
+
+# def make_greate(magicians, new_magicians):
+#     while magicians:
+#         a = magicians.pop()
+#         new_magicians.append('Great' + '_' + a.title())
+#         print(new_magicians)
+# list = ['pavel', 'alex']
+# list2 = []
+# make_greate(list, list2)
+
+# def make_greate(magicians, new_magicians):##Подбрасываем в функцию два списка, из одного все перекидываем в другой и добавляем приставку great, потом делаем print
+#     while magicians:
+#         a = magicians.pop()
+#         new_magicians.append('Great' + '_' + a.title())
+#     print(new_magicians)
+# list = ['pavel', 'alex']
+# list2 = []
+# make_greate(list[:], list2) ##передаем функции копию списка list с помощью среза [:]
+# print(list)
+
+
+# def make_sandwich(*toppings):
+#     for topping in toppings:
+#         a = []
+#         a.append(topping)
+#         print('\nВы выбрали:' + ' ' + str(a))
+
+# make_sandwich('pepperoni', 'chise', 'chilli')
+
+
+
+
+######Функция с произвольными аргументами с помощью * для списка или ** для словаря
+
+# def build_profile(first, last, **user_info):
+#     a = {}
+#     a['first'] = first
+#     a['last'] = last
+#     for key, value in user_info.items():
+#         a[key] = value
+#     return a
+
+# user_profile = build_profile('pavel', 'zaharov', age='23', weight='68')
+# print(user_profile)
+
+# def square(numbers):
+#     return numbers*numbers
+# numbers = [1,2,3,4,5]
+
+# maps = map(square, numbers) #Функция map() позволяет вызвать итерацию функции square по спискуу numbers
+# for x in maps: #Далее пробегаемся по переменной циклом иначе она не заработает
+#     print(x)
+#map() #Функция map() позволяет вызвать итерацию функции square по спискуу numbers
+# y = list(map(square, numbers))#Можно заключить в список элементы по которым уже пробежала функция square
+# print(y)
+
+# def is_adult(ages):
+#     return ages>18
+ages = [5,16,30,21,54]
+# filter() #Функция filter() позволит внести в новый список только те значения, которые соответствуют условию функции is_adult
+# y = list(filter(is_adult,ages))#Функция filter() позволит внести в новый список только те значения, которые соответствуют условию функции is_adult
+# print(y)
+
+#lambda Это та же самая вызываемая функция, но которую можно вызывать на месте (in place), если нам ее нужно во всем коде вызвать например один раз, синтаксис тако1:
+
+lamda_func = list(filter(lambda age: age >= 18, ages)) #Сделали тоже самое что и с помощью функции is_adult() которую писали чуть выше
+print(lamda_func)
+
+multiplayer = lambda x, y: x*y # например эта функция с несколькими аргументами
+print(multiplayer(2,3)) # Вызываем эту функцию и задаем значения этим аргументам, получаем результат x*y
+
+
+#####################################################################################################################
+#Декораторы_______________________________Нужны для красивого оформления начала и конца выполненного результата при вызове какой-нибудь функции
+
+# def log_decorator(func):
+#     def wrap():
+#         print(f'calling func {func}')
+#         func()
+#         print(f'func {func} its work')
+#     return wrap
+# def hellow():
+#     print('Hellow world')
+
+# # wrapped = log_decorator(hellow)
+# # wrapped()
+# # Получим результат:
+# # calling func <function hellow at 0x000001B1315DE9D8>
+# # Hellow world
+# # func <function hellow at 0x000001B1315DE9D8> its work
+# # но можем воспользоваться специальным синтаксисом и получим тот же самый результат:
+# @log_decorator
+# def hello():
+#     print('Hellow world')
+# hello()
+##Пример декоратора, где мы замеряем время за которое выполняется функция
+
+# from timeit import default_timer as timer
+# import math
+# import time
+
+# def mesure_time(func):
+#     def inner(*args):
+#         start = timer()
+#         func(*args)
+#         end = timer()
+#         print(f'function {func} took {end-start} for execution')
+#     return inner
+# @mesure_time
+# def factorial(num):
+#     time.sleep(3)
+#     print(math.factorial(num)) #Математическая функция факториал, умножает все натуральные числа от 1 до 50 в данном лучае
+# factorial(50)
+
+########################Пример очень интересной функции с использованием any()
+def calc_dice_scores(x):
+    return sum([a + b for a,b in x]) if not any([a==b for a,b in x]) else 0
+
+b = calc_dice_scores(x)
+print(b)
+############### Интересный пример функции
+def taken(stics):
+    return stics > 5
+
+if not taken(4): (в данном случае сработает, так как выполнение данной функции с 4-ой вернет False)
+    print('!')
