@@ -1,0 +1,25 @@
+Покажет элементы начиная со второго
+
+# a = ['suzuki', 'bmw', 'lada', 'mazda', 'kawasaki']
+# print(a)
+# print('This is first three in the ithems in the list are: ')
+# print(a[2:])
+
+Скопирует список
+
+# a = ['suzuki', 'bmw', 'lada', 'mazda', 'kawasaki']
+# b = a[:]
+# print(b)
+# a.insert(0, 'mersedes')
+# print(a)
+# print(b)
+# for list_1 in a:
+#     print('Основной список: ')
+#     print(list_1,)
+# for list_2 in b:
+#     print('\nВторичный список: ')
+#     print(list_2)
+
+a = (50, 54)
+for b in a
+print(b[0])
